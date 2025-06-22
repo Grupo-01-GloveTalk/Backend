@@ -1,4 +1,4 @@
-#routes
+# routes
 from fastapi import APIRouter
 from app.models.gesture_model import predict_gesture
 from app.schemas.gesture_schema import GestureInput
