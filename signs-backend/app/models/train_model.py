@@ -14,11 +14,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent  # sube de models -> ap
 data_path = BASE_DIR / "data" / "data_clean" / "dataset.csv"
 df = pd.read_csv(data_path)
 
-# Eliminar columnas no numéricas (timestamp)
 features = df.drop(columns=["timestamp", "label"])
 labels = df["label"]
 
-# Codificar las etiquetas (HOLA, CHAU, A, etc.)
+
 label_encoder = LabelEncoder()
 labels_encoded = label_encoder.fit_transform(labels)
 
