@@ -1,4 +1,5 @@
 # train_model.py
+# Script para cargar, entrenar y guardar un modelo de clasificación de gestos a partir de datos de sensores (acelerómetro y giroscopio)
 
 import pandas as pd
 import numpy as np
