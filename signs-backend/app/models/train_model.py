@@ -26,6 +26,7 @@ X_train, X_test, y_train, y_test = train_test_split(features, labels_encoded, te
 # Normalizar los datos
 X_train = X_train / np.linalg.norm(X_train, axis=1, keepdims=True)
 X_test = X_test / np.linalg.norm(X_test, axis=1, keepdims=True)
+#mm
 
 # Crear el modelo
 model = tf.keras.Sequential([
