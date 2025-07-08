@@ -9,3 +9,5 @@ router = APIRouter()
 def predict(data: GestureInput):
     result = predict_gesture(data)
     return {"prediction": result}
+
+# endppint
