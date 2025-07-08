@@ -1,8 +1,18 @@
+# app/main.py
+
 from fastapi import FastAPI
-from app.api.routes import router
+from pydantic import BaseModel
+from app.models.gesture_model import predict_gesture
 
-# Inicialización de la aplicación FastAPI para GloveTalk
-app = FastAPI(title="GloveTalk API")
+app = FastAPI()
 
-# Inclusión de las rutas principales bajo el prefijo /api y el tag Prediction
-app.include_router(router, prefix="/api", tags=["Prediction"])
+class SensorData(BaseModel):
+    data: list  # Lista de 90 valores
+
+@app.post("/predict")
+def predict(data: SensorData):
+    try:
+        result = predict_gesture(data.data)
+        return {"prediction": result}
+    except ValueError as e:
+        return {"error": str(e)}
