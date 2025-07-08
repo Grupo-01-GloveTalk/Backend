@@ -3,4 +3,4 @@ from dotenv import load_dotenv
 
 load_dotenv()
 # LOADING MODAL PATH
-MODEL_PATH = os.getenv("MODEL_PATH", "model/gesture_model.h5")
+MODEL_PATH = os.getenv("MODEL_PATH", "models/gesture_model.h5")
